@@ -89,5 +89,19 @@ if (hour > 12) {
     ampm = "am";
 }
 
+//populate timeBox with time
 
+$timeBoxSpn.text(`${displayHour} ${ampm}`);
 
+//insert into col insert into timeBox
+
+$rowDiv.append($col2TimeDiv);
+$col2TimeDiv.append($timeBoxSpn);
+//STOP building timebox portion of row
+//build row components
+let dailyPlanSpn = $('<input>');
+
+$dailyPlanSpn.attr('id', `input-${index}`);
+$dailyPlanSpn.attr('hour-index',index);
+    $dailyPlanSpn.attr('type','text');
+    $dailyPlanSpn.attr('class','dailyPlan');
