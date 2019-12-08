@@ -162,4 +162,16 @@ $(`#saveid-${$index}`).removeClass('shadowPulse');
 localStorage.setItem("storedPlan", JSON.stringify(planTextArr));
 });
 
+//function to color save btn on change of input
+$(document).on('change', 'input', function(event){
+    event.preventDefault();
+    if (test) { console.log('onChange'); }
+    if (test) { console.log('id', $(this).attr('hour-index')); }
+
+    //need to check for save btn to ensure user saves event in planner
+    let i = $(this).attr('hour-index');
+
+    //add shadow pulse class to save btn
+    $(`#saveid-${i}`).addClass('shadowPulse');
+});
 
