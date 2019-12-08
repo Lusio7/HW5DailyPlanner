@@ -71,5 +71,23 @@ $rowDiv.attr('hour-index', hour);
 let $col2TimeDiv = $ ('<div>');
 $col2TimeDiv.addClass ('col-md-2');
 
+//create time box element (contains time)
+
+const $timeBoxSpn = $('<span>');
+// can use this to get value
+$timeBoxSpn.attr('class' , 'timeBox');
+
+//format hours for display
+
+letDisplayHour = 0;
+let ampm = "";
+if (hour > 12) {
+    displayHour = hour - 12;
+    ampm = "pm";
+}else{
+    displayHour = hour;
+    ampm = "am";
+}
+
 
 
