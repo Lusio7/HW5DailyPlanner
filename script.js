@@ -60,3 +60,16 @@ for (let hour = 9; hour <= 17; hour++){
 }
 
 
+//build row components
+let $rowDiv = $('<div>');
+$rowDiv.addClass ('row');
+$rowDiv.addClass('plannerRow');
+$rowDiv.attr('hour-index', hour);
+
+//start building time box portion of row
+
+let $col2TimeDiv = $ ('<div>');
+$col2TimeDiv.addClass ('col-md-2');
+
+
+
