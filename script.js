@@ -121,4 +121,20 @@ $rowDiv.append($col1SaveDiv);
 $col1SaveDiv.append($saveBtn);
 //STOP building save portion of row
 
+//set row col color based on time
+function updateRowColor ($hourRow,hour){
 
+    if (test) {console.log("rowColor", nowHour24, hour);}
+
+    if ( hour < nowHour24) {
+        // $hourRow.css('')
+        if (test) {console.log("lessThan");}
+        $hourRow.css("background-color", "lightgrey")
+    }else if (hour > nowHour24){
+        if (test) {console.log("greaterThan");}
+        $hourRow.css("background-color", "lightgreen")
+    }else {
+        if (test) {console.log("equal");}
+        $hourRow.css("background-color", "tomato")
+    }
+};
