@@ -1,0 +1,62 @@
+$(document).ready(functio()){
+    const test = false;
+}
+
+//get times from moment
+
+const now = moment().format('MMMM Do YYYY');
+
+//commented out for test in non-std hours
+
+let nowHour24 = moment().format('H');
+let nowHour12 = moment().format('h');
+
+//set times for testing after hours
+
+if (test) {
+    nowHour24 = 13;
+    nowHour12 = 1;
+}
+
+let $dateHeading = $('#navbar-subtitle');
+$dateHeading.text(now);
+
+//using font awesome icon  https://fontawesome.com/license
+//change descriotion here none
+
+const saveIcon = "./images/save-regular.svg";
+
+
+//get stored TODOS from localStorage
+//Parsing the JSON string to an object
+let storedPlans = JSON.parse(localStorage.getItem("storedPlans"));
+
+if test {console.log(storedPlans);}
+
+//if plans were retrieved from localStorage, update the plan array to it
+if (storedPlans !==null) {
+    planTextArr = storedPlans;
+}else{
+    //this should only occur on first time the app is loaded in the browser
+    //remind user that launch is important
+    planTextArr = new Array (9);
+    planTextArr[4] = "Get ready for GWU Bootcamp"
+}
+
+if (test) { console.log("full array of planned text", planTextArr);}
+
+//set var referencing planner element
+
+let $plannerDiv = $('#plannerContainer');
+//clear exisitng elemements
+$plannerDiv.empty();
+
+if (test) {console.log("current time", nowHour12);}
+
+//build calendar by row for fix set of hours
+for (let hour = 9; hour <= 17; hour++){
+    //index for array use offset from hour
+    let index = hour - 9;
+}
+
+
