@@ -1,54 +1,168 @@
-body{
-    background-image: url(/img/Time\ Concept\ Background.svg);
+body {
+  /* image for background */
+  background-image: url('./images/Time\ Concept\ Background.svg');
+
+  /* font parameters */
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: .8em;
+
+  /* added padding to prevent navbar overlap. (100 based on browser inpector of size) */
+  padding-top: 90px;
+  vertical-align: middle;
 }
-  
 
 
-    /* font parameters */
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 12px;
+/*  need to make box fit space */
+input {
+  background: transparent;
+  border: none;
+
+  /* so cursor appears */
+  padding-left: 3px;
+}
+
+
+.navbar {
+  /* background-color: #73919b;   */
+  background-color: #73919b;  
+  color: #b6d7e2;  
+
+  /* pulls everything down to push up against bottom border */
+  padding-bottom: 0;
   
-    /* added padding to prevent navbar overlap. (100 based on browser inpector of size) */
-    padding-top: 90px;
-    vertical-align: middle;
+  /* creates solid line for the bottom border  */
+  border-bottom: solid;
+  border-bottom-color: #ccc;
+  width: 100%;
+  text-align: center;
+}
+
+#navbar-title {
+  padding: 0px;
+  font-size: 30px;
+  color: linen!important; /* TODO can we do this without the !important */
+  text-align: center;
+}
+
+#navbar-subtitle {
+  padding: 2px;
+  font-size: 15px;
+  color: linen!important; /* TODO can we do this without the !important */
+  text-align: center;
+}
+
+.col-md-1, .col-md-2, .col-md-9 {
+  padding: 0;
+}
+
+/* #planner */
+#plannerContainer {
+  /* background-color: #73919b;   */
+  background-color: #b6d7e2;  
+  /* provides spacing between the top and bottom nav bars and the content */
+  margin-top: 20px;
+  margin-bottom: 80px;
+  
+  /* provide spaceing around the text */
+  padding: 40px;
+} 
+
+.plannerRow {
+  height: 50px;
+  margin-top: 2px;
+  margin-bottom: 2px;
+  font-size: 1em;
+  line-height: 1.5;
+  border-radius: 15px;
+}
+
+/* style container with time in it */
+.timeBox {
+  background-color: linen;  
+  color: black;
+  height:100%;
+  width: 100%;
+  text-align: center;
+  border-radius: 15px 0px 0px 15px;
+  display: inline-block;
+  font-size: 1em;
+}
+
+/* style container with daily plan */
+.dailyPlan {
+  color: black;  
+  font-size: 12pt;
+  height:100%;
+  width: 100%;
+}
+
+.saveIcon {
+  background-color: darkturquoise;
+  color: linen;
+  border-radius: 0px 15px 15px 0px;
+  /* float: right; */
+  font-size: 1.5em;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+
+.footer {
+  /* set text properties */
+  background-color: #666;
+  
+  /* sets height of footer*/
+  height: 10%;
+  
+  /* sets properties for footer border*/
+  border-top: solid;
+  border-top-color: #b6d7e2;  
+  border-top-width: 8px;
+}
+
+.footer-text, .header-text {
+  /* forces text across the entire screen so it has a center */
+  width: 100%;
+  text-align: center;
+
+  font-size: 10px;
+  color:linen; 
+}
+
+/* media query for screen size to be applied to center text to switch at same time as navbar */
+@media (max-width: 768px) {
+  .container-fluid {
+    /* removes paddding on either side */
+    padding-left: 0;
+    padding-right: 0;
   }
-  
-  
-  /*  need to make box fit space */
-  input {
-    background: transparent;
-    border: none;
-  
-    /* so cursor appears */
-    padding-left: 3px;
+  .plannerRow {
+    height: 100%;
+    border-radius: 10;
+    margin: 10px;
   }
-  
-  
-  .navbar {
-    /* background-color: #73919b;   */
-    background-color: #73919b;  
-    color: #b6d7e2;  
-  
-    /* pulls everything down to push up against bottom border */
-    padding-bottom: 0;
-    
-    /* creates solid line for the bottom border  */
-    border-bottom: solid;
-    border-bottom-color: #ccc;
-    width: 100%;
-    text-align: center;
+
+  .saveIcon { border-radius: 0 0 15px 15px; }
+
+  .timeBox { border-radius: 15px 15px 0 0; }
+}
+
+@import url('https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed');
+
+.wrapper
+{ 
+  padding: 20px;     
+} 
+
+@keyframes shadow-pulse
+{
+  0% {
+    box-shadow: 0 0 0 0px rgba(0, 0, 0, 0.2);
   }
-  
-  #navbar-title {
-    padding: 0px;
-    font-size: 30px;
-    color: linen!important; /* TODO can we do this without the !important */
-    text-align: center;
+  100% {
+    box-shadow: 0 0 0 35px rgba(0, 0, 0, 0);
   }
-  
-  #navbar-subtitle {
-    padding: 2px;
-    font-size: 15px;
-    color: linen!important; /* TODO can we do this without the !important */
-    text-align: center;
-  }
+}
+.shadowPulse {
+  animation: shadow-pulse 1s infinite;
+}

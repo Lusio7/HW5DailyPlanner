@@ -138,13 +138,13 @@ $(document).ready(function() {
       if ( hour < nowHour24) {
         // $hourRow.css('')
         if (test) { console.log("lessThan"); }
-        $hourRow.css("background-color","lightgrey")
+        $hourRow.css("background-color","tomato")
       } else if ( hour > nowHour24) {
         if (test) { console.log("greaterthan"); }
         $hourRow.css("background-color","lightgreen")
       } else {
         if (test) { console.log("eqaul"); }
-        $hourRow.css("background-color","tomato")
+        $hourRow.css("background-color","lightblue")
       }
     };
   
@@ -167,7 +167,7 @@ $(document).ready(function() {
       if (test) { console.log('index ', $index); }
       if (test) { console.log('click pta after '+ planTextArr); }
   
-      // remove shawdow pulse class
+      // remove shawdow pulse class 
       $(`#saveid-${$index}`).removeClass('shadowPulse');
       localStorage.setItem("storedPlans", JSON.stringify(planTextArr));
     });  
