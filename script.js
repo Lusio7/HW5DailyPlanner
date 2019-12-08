@@ -3,16 +3,13 @@ $(document).ready(functio()){
 }
 
 //get times from moment
-
 const now = moment().format('MMMM Do YYYY');
 
 //commented out for test in non-std hours
-
 let nowHour24 = moment().format('H');
 let nowHour12 = moment().format('h');
 
 //set times for testing after hours
-
 if (test) {
     nowHour24 = 13;
     nowHour12 = 1;
@@ -20,10 +17,8 @@ if (test) {
 
 let $dateHeading = $('#navbar-subtitle');
 $dateHeading.text(now);
-
 //using font awesome icon  https://fontawesome.com/license
 //change descriotion here none
-
 const saveIcon = "./images/save-regular.svg";
 
 
@@ -46,7 +41,6 @@ if (storedPlans !==null) {
 if (test) { console.log("full array of planned text", planTextArr);}
 
 //set var referencing planner element
-
 let $plannerDiv = $('#plannerContainer');
 //clear exisitng elemements
 $plannerDiv.empty();
@@ -67,18 +61,15 @@ $rowDiv.addClass('plannerRow');
 $rowDiv.attr('hour-index', hour);
 
 //start building time box portion of row
-
 let $col2TimeDiv = $ ('<div>');
 $col2TimeDiv.addClass ('col-md-2');
 
 //create time box element (contains time)
-
 const $timeBoxSpn = $('<span>');
 // can use this to get value
 $timeBoxSpn.attr('class' , 'timeBox');
 
 //format hours for display
-
 letDisplayHour = 0;
 let ampm = "";
 if (hour > 12) {
@@ -90,11 +81,9 @@ if (hour > 12) {
 }
 
 //populate timeBox with time
-
 $timeBoxSpn.text(`${displayHour} ${ampm}`);
 
 //insert into col insert into timeBox
-
 $rowDiv.append($col2TimeDiv);
 $col2TimeDiv.append($timeBoxSpn);
 //STOP building timebox portion of row
@@ -107,18 +96,29 @@ $dailyPlanSpn.attr('hour-index',index);
     $dailyPlanSpn.attr('class','dailyPlan');
 
 //access index from data array for hour
-
 $dailyPlanSpn.val(planTextArr[index]);
 
 //create col to control width
-
 let $col9IptDiv = $('<div>');
 $col9IptDiv.addClass('col-md-9');
 
 //add col width and row component to row
-
 $rowDiv.append($col9IptDiv);
 $col9IptDiv.append($dailyPlanSpn);
 //STOP building timebox portion of row
+
+//START building save portion of row
+let $col1SaveDiv = $('<div>');
+$col1SaveDiv.addClass('col-md-1');
+
+let $saveBtn = $('<i>');
+    $saveBtn.attr('id',`saveid-${index}`);
+    $saveBtn.attr('save-id',index);
+    $saveBtn.attr('class',"far fa-save saveIcon");
+
+//add col width and row component to row
+$rowDiv.append($col1SaveDiv);
+$col1SaveDiv.append($saveBtn);
+//STOP building save portion of row
 
 
