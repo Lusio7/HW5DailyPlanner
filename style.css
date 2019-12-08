@@ -1,44 +1,54 @@
-body {
-    background-image: url(/background2.png);
+body{
+    background-image: url(/img/Time\ Concept\ Background.svg);
+}
+  
+
+
+    /* font parameters */
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 10px;
+    font-size: 12px;
+  
+    /* added padding to prevent navbar overlap. (100 based on browser inpector of size) */
     padding-top: 90px;
     vertical-align: middle;
-}
-
-input {
+  }
+  
+  
+  /*  need to make box fit space */
+  input {
     background: transparent;
     border: none;
+  
+    /* so cursor appears */
     padding-left: 3px;
-}
-
-.navbar {
-    background-color: teal;
-    color: white;
+  }
+  
+  
+  .navbar {
+    /* background-color: #73919b;   */
+    background-color: #73919b;  
+    color: #b6d7e2;  
+  
+    /* pulls everything down to push up against bottom border */
     padding-bottom: 0;
+    
+    /* creates solid line for the bottom border  */
     border-bottom: solid;
-    border-bottom-color:white;
+    border-bottom-color: #ccc;
     width: 100%;
     text-align: center;
-}
-
-#navbar-title {
-    padding: 2px;
-    font-size: 25px;
-    color: white;
+  }
+  
+  #navbar-title {
+    padding: 0px;
+    font-size: 30px;
+    color: linen!important; /* TODO can we do this without the !important */
     text-align: center;
-    border-top-color:white;
-}
-
-#navbar-subtitle {
+  }
+  
+  #navbar-subtitle {
     padding: 2px;
     font-size: 15px;
+    color: linen!important; /* TODO can we do this without the !important */
     text-align: center;
-}
-
-
-
-
-
-
-
+  }
