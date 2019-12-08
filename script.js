@@ -138,3 +138,28 @@ function updateRowColor ($hourRow,hour){
         $hourRow.css("background-color", "tomato")
     }
 };
+
+//save to localStorage
+//onclick function to for user clicks on plan area
+$(documet).om("click", 'i', function(event){
+    event.preventDefault();
+
+    if (test) {console.log('click pta before' + planTextArr);}
+
+    let $index = $(this).attr('save-id');
+
+    let inputId = '#input' +$'$index';
+    let $value = $(inputId).val();
+
+    planTextArr[$index] = $value;
+
+    if (test) { console.log('value ', $value); }
+    if (test) { console.log('index ', $index); }
+    if (test) { console.log('click pta after '+ planTextArr); }
+
+//remove shadow pulse class
+$(`#saveid-${$index}`).removeClass('shadowPulse');
+localStorage.setItem("storedPlan", JSON.stringify(planTextArr));
+});
+
+
