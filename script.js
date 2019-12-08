@@ -105,3 +105,20 @@ $dailyPlanSpn.attr('id', `input-${index}`);
 $dailyPlanSpn.attr('hour-index',index);
     $dailyPlanSpn.attr('type','text');
     $dailyPlanSpn.attr('class','dailyPlan');
+
+//access index from data array for hour
+
+$dailyPlanSpn.val(planTextArr[index]);
+
+//create col to control width
+
+let $col9IptDiv = $('<div>');
+$col9IptDiv.addClass('col-md-9');
+
+//add col width and row component to row
+
+$rowDiv.append($col9IptDiv);
+$col9IptDiv.append($dailyPlanSpn);
+//STOP building timebox portion of row
+
+
